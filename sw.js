@@ -3,6 +3,12 @@ const urlsToCache = ["index.html", "offline.html"];
 
 const self = this;
 
+// This is training code only it has 2 flaws
+// 1 Everytime add new element to cashe this code would need to re-add 1 by 1
+// 2 Everytime add a new version of the service worker - would have to manually update the code
+// 3 its a 'cachefirst` which may not be optimal
+// use staleWhileRevalidate for avatar caching
+
 // Install SW
 self.addEventListener("install", (event) => {
    event.waitUntil(
